@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/main_bg">
+
+   <LinearLayout
+       android:id="@+id/ll_score_detail"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:layout_gravity="center_vertical">
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:layout_gravity="center_horizontal">
+
+           <TextView
+               android:text="恭喜！您的得分是："
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textColor="@android:color/white"
+               android:textSize="16sp"/>
+
+           <TextView
+               android:id="@+id/tv_score"
+               android:text="0"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textColor="@android:color/white"
+               android:textSize="16sp"/>
+       </LinearLayout>
+
+       <EditText
+           android:id="@+id/et_scoreName"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:hint="@string/score_name"/>
+
+       <Button
+           android:id="@+id/btn_ok_scoreName"
+           android:background="@drawable/btn_select"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="@string/ok"
+           android:layout_gravity="center"
+           android:paddingLeft="@dimen/btn_pad_lf"
+           android:paddingRight="@dimen/btn_pad_lf"
+           android:layout_marginTop="@dimen/margin_top"
+           />
+   </LinearLayout>
+
+</FrameLayout>
