@@ -32,9 +32,13 @@ public class ScoreActivity extends Activity{
         list_score.setAdapter(adapter);
     }
     private void searchScore(){
+        int i = 0;
         List<Score> scores = DataSupport.order("score DESC").find(Score.class);
         for (Score score1:scores) {
-            scoreList.add(score1);
+            if (i < 10){
+                scoreList.add(score1);
+                i++;
+            }
         }
     }
 }

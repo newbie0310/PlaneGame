@@ -8,6 +8,9 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 
+import com.imcore.demo.game.entity.Score;
+import com.imcore.demo.game.ui.GameView;
+
 public class MainActivity extends Activity implements View.OnClickListener{
 
 	private Button btn_start_game;
@@ -39,6 +42,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
 		switch (view.getId()){
 			case R.id.btn_start_game:
 				Intent intent=new Intent(this,GameActivity.class);
+				GameView.gameState = GameView.GAMEING;
+				Score.SCORE = 0;
 				startActivity(intent);
 				break;
 			case R.id.btn_exit_game:

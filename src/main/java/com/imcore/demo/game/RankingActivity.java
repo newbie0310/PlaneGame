@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.imcore.demo.game.adapter.ScoreListAdapter;
 import com.imcore.demo.game.entity.Score;
@@ -26,6 +27,7 @@ import java.util.List;
 public class RankingActivity extends Activity implements View.OnClickListener{
     private Button btn_ok_scoreName;
     private EditText et_scoreName;
+    private TextView tv_final_score;
     private String scoreName = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,11 +35,13 @@ public class RankingActivity extends Activity implements View.OnClickListener{
         setContentView(R.layout.activity_ranking);
         initData();
         Connector.getDatabase();
+        tv_final_score.setText("恭喜！您的得分是：" + Score.SCORE);
     }
 
     private void initData(){
         btn_ok_scoreName = (Button) findViewById(R.id.btn_ok_scoreName);
         et_scoreName = (EditText) findViewById(R.id.et_scoreName);
+        tv_final_score = (TextView) findViewById(R.id.tv_final_score);
         btn_ok_scoreName.setOnClickListener(this);
     }
 

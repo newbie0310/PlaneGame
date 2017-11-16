@@ -84,7 +84,7 @@ public class EnemyManager {
                     int cnterX = enemy.x + enemy.enemy.getWidth() / 2,
                             centerY = enemy.y + enemy.enemy.getHeight() / 2;
                     boomData.add(new Boom(view,cnterX,centerY));
-					Score.SCORE += 100;
+					Score.SCORE += 10;
 					Log.d("EnemyManager",Score.SCORE + "");
                 }
                 enemyData.remove(enemy);

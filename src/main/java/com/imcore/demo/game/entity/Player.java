@@ -3,6 +3,8 @@ package com.imcore.demo.game.entity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Point;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -28,6 +30,8 @@ public class Player {
 	// 是否碰撞的标识位
 	public boolean isCollision;
 
+	private Paint mPaint;
+
 	public Player(GameView view) {
 		// 初始化必要参数
 		bmpPlayerHp = BitmapFactory.decodeResource(view.res, R.drawable.hp);
@@ -38,6 +42,9 @@ public class Player {
 
 		//初始化血量为3
 		playerHp = 3;
+
+		//初始化画笔
+        mPaint = new Paint();
 	}
 
 	/**
@@ -60,6 +67,12 @@ public class Player {
 			int hpX = i * bmpPlayerHp.getWidth(),hpY = 0;
             canvas.drawBitmap(bmpPlayerHp,hpX,hpY,null);
 		}
+
+        mPaint.setStrokeWidth(3);
+        mPaint.setTextSize(60);
+        mPaint.setColor(Color.WHITE);
+        mPaint.setTextAlign(Paint.Align.LEFT);
+        canvas.drawText("得分：" + Score.SCORE,GameView.screenW - GameView.screenW/4,50,mPaint);
 	}
 
 	/**
